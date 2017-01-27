@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import to_do as t
+
+try:
+    t.read("to_do_list.txt")
+
+    operand = input("Would you like to add/remove something to you to-do list? > ").lower().strip()
+    if operand == "add":
+        t.add_item("to_do_list.txt")
+    if operand == "remove":
+        t.remove_item("to_do_list.txt")
+
+    read_again = input("Would you like to view your new to-do list? y/n > ").lower().strip()
+    if read_again == "y":
+        t.read("to_do_list.txt")
+except KeyboardInterrupt:
+    exit()

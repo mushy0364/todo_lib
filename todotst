@@ -1,5 +1,0 @@
-#!/usr/bin/env python3
-
-import to_do as t
-
-t.add_item()
