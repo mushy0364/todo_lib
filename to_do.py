@@ -20,13 +20,11 @@ def remove_item(file_name):
         clear_file(file_name)
     else:
         with open(file_name,"r") as f:
-            read = f.read()
-            f.close()
+            read = f.read().split("\n")
         with open(file_name,"w") as f:
             for line in read:
-                if line != remove_item:
-                    f.write(line)
-            f.close()
+                if remove_item not in line:
+                    f.write(line + "\n")
 
 def read(file_name):
     with open(file_name,"r") as f:
