@@ -23,8 +23,9 @@ def remove_item(file_name):
             read = f.read().split("\n")
         with open(file_name,"w") as f:
             for line in read:
-                if remove_item not in line:
-                    f.write(line + "\n")
+                if line != '':
+                    if remove_item not in line:
+                        f.write(line + "\n")
 
 def read(file_name):
     with open(file_name,"r") as f:
